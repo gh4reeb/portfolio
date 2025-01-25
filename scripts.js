@@ -22,3 +22,39 @@ $ Feel free to explore my blogs below...
 
     typeWriter(text);
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const blogList = document.getElementById('blogList');
+
+    const blogs = [
+        {
+            title: "Deploying OpenStack on Ubuntu LTS 2024",
+            description: "A step-by-step guide on deploying OpenStack using Kolla-Ansible on Ubuntu LTS 2024.",
+            link: "https://medium.com/your-medium-link"
+        },
+        {
+            title: "Cloud Automation Best Practices",
+            description: "Discussing best practices for automating cloud deployments with OpenStack and Kubernetes.",
+            link: "https://medium.com/your-medium-link"
+        },
+        {
+            title: "Understanding Ceph for Storage",
+            description: "An overview of Ceph's architecture and how to implement it in cloud environments.",
+            link: "https://medium.com/your-medium-link"
+        }
+    ];
+
+    function generateBlogRow(blog) {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${blog.title}</td>
+            <td>${blog.description}</td>
+            <td><a href="${blog.link}" target="_blank" class="blog-link">Read More</a></td>
+        `;
+        
+        blogList.appendChild(row);
+    }
+
+    // Generate blog rows dynamically
+    blogs.forEach(blog => generateBlogRow(blog));
+});
