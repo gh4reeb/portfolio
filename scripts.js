@@ -1,27 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const terminalOutput = document.getElementById('terminalOutput');
-    const text = `
-$ Welcome to My Portfolio
-$ Expertise:
-  - Full-stack Web Development
-  - Cloud Infrastructure (AWS, OpenStack)
-  - DevOps & CI/CD Automation
-$ Projects:
-  - Automated Cloud Deployment with OpenStack
-  - Scalable Web Applications
-$ Feel free to explore my blogs below...
-    `;
+// Terminal typing effect
+const terminalText = document.getElementById('terminal-text');
+const skills = [
+    "I can deploy OpenStack for cloud infrastructure.",
+    "I can perform VAPT to secure your applications.",
+    "I can improve your organization's security posture.",
+    "I have experience in SIEM deployment and monitoring.",
+    "I am skilled in Kubernetes and container orchestration."
+];
+let index = 0;
 
-    function typeWriter(text, i = 0) {
-        if (i < text.length) {
-            terminalOutput.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(() => typeWriter(text, i), 50);
-        }
-    }
+function typeSkill() {
+    terminalText.textContent = skills[index];
+    index = (index + 1) % skills.length;
+}
 
-    typeWriter(text);
-});
+// Loop through skills every 5 seconds
+setInterval(typeSkill, 5000);
+
+// Initialize with the first skill
+typeSkill();
+//blog
 document.addEventListener('DOMContentLoaded', function () {
     const blogList = document.getElementById('blogList');
 
