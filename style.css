@@ -100,6 +100,47 @@ main {
     background-color: #1e1e1e;
     color: #33FF00;
 }
+/* Terminal section styling */
+.terminal {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #33FF00;
+    border-radius: 10px;
+    background-color: #121212;
+    color: #33FF00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal .header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.terminal .header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal .header .dot.red { background-color: #FF5C57; }
+.terminal .header .dot.yellow { background-color: #FFBD2E; }
+.terminal .header .dot.green { background-color: #00D473; }
+
+.typing {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    animation: typing 5s steps(40, end) infinite;
+}
+
+/* Keyframe for typing animation */
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
 
 /* Global reset */
 * {
@@ -114,15 +155,6 @@ body {
     color: #33FF00;
 }
 
-.terminal {
-    width: 80%;
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 2px solid #33FF00;
-    border-radius: 10px;
-    background-color: #121212;
-}
 
 .header {
     display: flex;
@@ -138,9 +170,6 @@ body {
     display: inline-block;
 }
 
-.red { background-color: #FF5C57; }
-.yellow { background-color: #FFBD2E; }
-.green { background-color: #00D473; }
 
 pre {
     white-space: pre-wrap;
@@ -148,18 +177,6 @@ pre {
     font-size: 18px;
 }
 
-/* Terminal typing animation */
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
-
-.typing {
-    overflow: hidden;
-    border-right: .15em solid #33FF00;
-    white-space: nowrap;
-    animation: typing 3s steps(40) 1s 1 normal both;
-}
 /* Blog section styles */
 .container {
     width: 80%;
