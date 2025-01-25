@@ -1,59 +1,23 @@
-/* Global reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #1e1e1e;
-    color: #33FF00;
-}
-
-.terminal {
-    width: 80%;
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 2px solid #33FF00;
-    border-radius: 10px;
-    background-color: #121212;
-}
-
-.header {
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.red { background-color: #FF5C57; }
-.yellow { background-color: #FFBD2E; }
-.green { background-color: #00D473; }
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-size: 18px;
-}
-
-/* Terminal typing animation */
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
-
-.typing {
-    overflow: hidden;
-    border-right: .15em solid #33FF00;
-    white-space: nowrap;
-    animation: typing 3s steps(40) 1s 1 normal both;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal">
+        <!-- Header section with dots -->
+        <div class="header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <!-- Terminal output area -->
+        <pre id="terminalOutput"></pre>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
