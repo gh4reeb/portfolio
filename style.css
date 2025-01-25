@@ -1,12 +1,78 @@
-/* Header styling */
-.header {
-    position: relative;
-    height: 200px;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    height: 100vh;
+    padding-top: 70px;
+    position: fixed;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 1000;
 }
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+/* Sidebar styling */
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #33FF00;
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #33FF00;
+    color: #121212;
+}
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #1e1e1e, #333333);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #FFBD2E;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
 
 /* Background resembling Backtrack R5 wallpaper */
 .header-background {
@@ -49,41 +115,7 @@
 .navbar a:hover {
     color: #00D473;
 }
-/* Sidebar styling */
-.sidebar {
-    position: fixed;
-    top: 200px; /* Below the header */
-    left: 0;
-    width: 200px;
-    height: calc(100% - 200px);
-    background-color: #121212;
-    border-right: 2px solid #33FF00;
-    padding-top: 20px;
-    z-index: 10;
-}
 
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar nav ul li {
-    margin: 10px 0;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #33FF00;
-    font-size: 1rem;
-    padding: 10px;
-    display: block;
-    transition: background 0.3s, color 0.3s;
-}
-
-.sidebar nav ul li a:hover {
-    background-color: #33FF00;
-    color: #121212;
-}
 
 /* Main content to accommodate sidebar */
 main {
