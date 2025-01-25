@@ -49,6 +49,57 @@
 .navbar a:hover {
     color: #00D473;
 }
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 200px; /* Below the header */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 200px);
+    background-color: #121212;
+    border-right: 2px solid #33FF00;
+    padding-top: 20px;
+    z-index: 10;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #33FF00;
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #33FF00;
+    color: #121212;
+}
+
+/* Main content to accommodate sidebar */
+main {
+    margin-left: 220px; /* Adjust for sidebar width */
+    padding: 20px;
+}
+
+/* Sections styling */
+.section {
+    margin-bottom: 50px;
+    padding: 20px;
+    border: 1px solid #33FF00;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    color: #33FF00;
+}
 
 /* Global reset */
 * {
