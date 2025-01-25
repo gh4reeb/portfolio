@@ -1,1 +1,59 @@
-hello world
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1e1e;
+    color: #33FF00;
+}
+
+.terminal {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #33FF00;
+    border-radius: 10px;
+    background-color: #121212;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red { background-color: #FF5C57; }
+.yellow { background-color: #FFBD2E; }
+.green { background-color: #00D473; }
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+
+/* Terminal typing animation */
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.typing {
+    overflow: hidden;
+    border-right: .15em solid #33FF00;
+    white-space: nowrap;
+    animation: typing 3s steps(40) 1s 1 normal both;
+}
